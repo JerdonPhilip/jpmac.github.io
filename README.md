@@ -1,0 +1,4 @@
+- 👋 Hi, I’m Jerdon Philip G. Macaraeg
+- 👀 I’m interested in Technology
+- 🌱 I’m currently seeking for ab internship
+- 📫 How to reach me jerdonphilipmacaraeg@gmail.com
