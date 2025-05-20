@@ -1,4 +1,4 @@
 - 👋 Hi, I’m Jerdon Philip G. Macaraeg
 - 👀 I’m interested in Technology
-- 🌱 I’m currently seeking for an internship
+- 🌱 I’m currently seeking for a job
 - 📫 How to reach me jerdonphilipmacaraeg@gmail.com
