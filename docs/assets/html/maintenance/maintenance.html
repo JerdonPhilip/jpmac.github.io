@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Coming Soon | Under Maintenance</title>
+    <!-- Tailwind CSS v3 + Font Awesome (icons only, no JS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles matching the simple premium aesthetic from reference */
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        }
+
+        .floating-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0) 70%);
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            left: 30%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0) 70%);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .premium-btn {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .premium-btn-outline {
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .premium-btn-outline:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .premium-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-frame {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 2rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            padding: 4px;
+        }
+
+        .profile-frame>div {
+            width: 100%;
+            height: 100%;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5), transparent);
+            margin: 3rem 0 2rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-white min-h-screen relative overflow-x-hidden">
+
+    <section class="premium-hero min-h-screen py-20 flex items-center relative">
+        <!-- Floating shapes (pure CSS decoration) -->
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <div class="container mx-auto px-4 hero-content">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Left Content -->
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="mb-2 text-blue-400 text-4xl">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 glow-text">Coming Soon</h1>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-6 text-gray-300">Under Maintenance</h2>
+
+                    <p class="text-gray-400 mb-8 leading-relaxed max-w-lg">
+                        We're working hard to build something amazing. This project hasn't been released yet,
+                        but we're making great progress and can't wait to share it with you soon.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="\docs\index.html"
+                            class="premium-btn px-6 py-3 rounded-lg font-semibold text-white inline-flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Go back to Home
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Visual/Icon Area -->
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="profile-frame floating">
+                        <div
+                            class="bg-gray-800/50 rounded-xl overflow-hidden flex flex-col items-center justify-center p-8">
+                            <i class="fas fa-cogs text-6xl text-blue-400 mb-4"></i>
+                            <i class="fas fa-code-branch text-4xl text-purple-400 mb-3"></i>
+                            <div class="text-center mt-2">
+                                <div class="text-sm text-gray-400">Building experience</div>
+                                <div class="text-xs text-gray-500 mt-1">✨ Fresh UI coming ✨</div>
+                            </div>
+                            <div class="status-badge">
+                                <i class="fas fa-circle mr-1 text-xs animate-pulse"></i> Maintenance Mode
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

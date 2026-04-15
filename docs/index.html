@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerdon Philip | Web Developer</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M20 60 Q35 40 50 60 T80 60' fill='none' stroke='%233b82f6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M20 75 Q35 55 50 75 T80 75' fill='none' stroke='%238b5cf6' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='35' r='6' fill='%233b82f6'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -203,7 +205,6 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="hover:text-blue-600 transition font-medium">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition font-medium">About</a>
                 <a href="#skills" class="hover:text-blue-600 transition font-medium">Skills</a>
                 <a href="#projects" class="hover:text-blue-600 transition font-medium">Projects</a>
                 <a href="#contact" class="hover:text-blue-600 transition font-medium">Contact</a>
@@ -213,7 +214,6 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
             <a href="#home" class="block py-2 hover:text-blue-600 transition font-medium">Home</a>
-            <a href="#about" class="block py-2 hover:text-blue-600 transition font-medium">About</a>
             <a href="#skills" class="block py-2 hover:text-blue-600 transition font-medium">Skills</a>
             <a href="#projects" class="block py-2 hover:text-blue-600 transition font-medium">Projects</a>
             <a href="#contact" class="block py-2 hover:text-blue-600 transition font-medium">Contact</a>
@@ -240,24 +240,14 @@
                         <a href="#contact" class="premium-btn-outline px-6 py-3 rounded-lg font-semibold text-white">
                             Contact Me
                         </a>
+                        <a href="assets/files/JERDON_MACARAEG_CV.pdf" download="JERDON_MACARAEG_CV.pdf" target="_blank"
+                            rel="noopener noreferrer"
+                            class="premium-btn-outline px-6 py-3 rounded-lg font-semibold text-white inline-flex items-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Download My Resume
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
                     </div>
-
-                    <!-- <div class="mt-12 flex items-center space-x-6">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold">24+</div>
-                            <div class="text-sm text-gray-400">Projects</div>
-                        </div>
-                        <div class="h-8 w-px bg-gray-700"></div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold">3+</div>
-                            <div class="text-sm text-gray-400">Years Experience</div>
-                        </div>
-                        <div class="h-8 w-px bg-gray-700"></div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold">18+</div>
-                            <div class="text-sm text-gray-400">Happy Clients</div>
-                        </div>
-                    </div> -->
                 </div>
 
                 <div class="md:w-2/5 flex justify-center" data-aos="fade-left" data-aos-delay="200">
@@ -266,7 +256,7 @@
                             <img src="assets/images/profile_2.jpg" alt="Jerdon Philip - Web Developer & Designer"
                                 class="profile-img">
                             <div class="status-badge">
-                                <i class="fas fa-circle mr-1 text-xs animate-pulse"></i> Gwaps
+                                <i class="fas fa-circle mr-1 text-xs animate-pulse"></i> Active
                             </div>
                         </div>
                     </div>
@@ -307,21 +297,20 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-white my-1">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">My <span
-                    class="text-blue-600">Skills</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
+                My <span class="text-blue-600">Skills</span>
+            </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <!-- Skill Card 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="0">
+                    data-aos="fade-up">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold mb-2 text-center">Frontend Development</h3>
-                    <p class="text-sm text-gray-600 text-center mb-4">HTML, CSS, JavaScript, AngularJS</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-blue-600 h-2 rounded-full w-90"></div>
-                    </div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">Frontend Development</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        HTML/HTML5, CSS/CSS3, JavaScript, AngularJS, Tailwind CSS, Bootstrap, Responsive Design
+                    </p>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
@@ -329,35 +318,54 @@
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-server text-green-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold mb-2 text-center">Backend Development</h3>
-                    <p class="text-sm text-gray-600 text-center mb-4">Node.js, JavaScript</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-green-600 h-2 rounded-full w-80"></div>
-                    </div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">Backend & Desktop</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        Node.js, Express.js, PHP, Python, Java, Electron, RESTful APIs, npm, Sequelize
+                    </p>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-palette text-yellow-600 text-2xl"></i>
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-database text-indigo-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold mb-2 text-center">UI/UX Design</h3>
-                    <p class="text-sm text-gray-600 text-center mb-4">Figma, Wireframes, User Research, Mockups</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-yellow-600 h-2 rounded-full w-85"></div>
-                    </div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">Database Systems</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        MySQL, PostgreSQL, SQLite
+                    </p>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
                     data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pen-nib text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">UI/UX & Creative</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        Wireframes, Mockups, User Flows, Process Flows, Adobe Photoshop, Lightroom, Photography
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="400">
                     <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cloud text-purple-600 text-2xl"></i>
+                        <i class="fas fa-cloud-upload-alt text-purple-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-semibold mb-2 text-center">DevOps</h3>
-                    <p class="text-sm text-gray-600 text-center mb-4">Azure DevOps, GitHub, CI/CD</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-purple-600 h-2 rounded-full w-75"></div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">DevOps & Tools</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        Git, GitHub, CI/CD, Azure DevOps
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-briefcase text-red-600 text-2xl"></i>
                     </div>
+                    <h3 class="font-bold mb-3 text-center text-gray-800">Operations</h3>
+                    <p class="text-sm text-gray-600 text-center leading-relaxed">
+                        Project Management, Business Operations, Professional Communication
+                    </p>
                 </div>
             </div>
         </div>
@@ -372,83 +380,84 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
                     data-aos="fade-up">
                     <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
                         <i class="fas fa-project-diagram text-white text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
-                        <p class="text-gray-600 mb-4">A full-featured online store with product catalog, shopping cart,
-                            and secure checkout.</p>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">Single-Page Wedding Landing Page</h3>
+                        <p class="text-gray-600 mb-4 flex-grow">Wedding Event Hub
+                            A garden-themed digital invitation and guest management platform featuring a personalized
+                            interactive photo gallery, and integrated venue navigation for
+                            guests.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
                         </div>
-                        <div class="flex justify-between">
-                            <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
-                            <a href="#" class="text-gray-600 hover:text-blue-600">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="flex justify-start">
+                            <a href="https://lumen-lens-ph.github.io/christopher-jhohanna-wedding/" target="_blank"
+                                rel="noopener noreferrer" aria-label="View Project"
+                                class="text-blue-600 hover:underline font-medium">View Details</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
                         <i class="fas fa-tasks text-white text-5xl"></i>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
-                        <p class="text-gray-600 mb-4">A productivity application for organizing tasks, setting
-                            deadlines, and tracking progress.</p>
+                        <p class="text-gray-600 mb-4 flex-grow">A productivity application for organizing tasks, setting
+                            deadlines, and tracking progress — currently in active
+                            development.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">AngularJS</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Firebase</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">Material UI</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Vue</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
                         </div>
-                        <div class="flex justify-between">
-                            <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
-                            <a href="#" class="text-gray-600 hover:text-blue-600">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="flex justify-start">
+                            <a href="\docs\assets\html\maintenance\maintenance.html"
+                                class="text-blue-600 hover:underline font-medium">View Details</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
                         <i class="fas fa-chart-line text-white text-5xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
-                        <p class="text-gray-600 mb-4">A comprehensive data visualization tool with interactive charts
-                            and real-time updates.</p>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">Inventory Management System</h3>
+                        <p class="text-gray-600 mb-4 flex-grow">A cross-company inventory tracking system unifying
+                            logistics
+                            between development corp
+                            and trading surplus mall. Built with Electron and Tailwind CSS — currently in active
+                            development.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Vue.js</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Python</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">D3.js</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Electron</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">PostgreSQL</span>
                         </div>
-                        <div class="flex justify-between">
+                        <div class="flex justify-start">
                             <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
-                            <a href="#" class="text-gray-600 hover:text-blue-600">
-                                <i class="fab fa-github"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="#"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -459,105 +468,53 @@
             <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Have a project in mind or want to discuss
                 potential opportunities? Feel free to reach out!</p>
 
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2">
-                    <form class="space-y-6" id="contact-form">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                                placeholder="John Doe">
-                        </div>
-
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
-                                Address</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                                placeholder="john@example.com">
-                        </div>
-
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                                placeholder="Project Inquiry">
-                        </div>
-
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
-                                placeholder="Your message here..."></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center justify-center">
-                            <span id="submit-text">Send Message</span>
-                            <i class="fas fa-spinner fa-spin ml-2 hidden" id="submit-spinner"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="md:w-1/2">
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm h-full">
-                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-phone text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium">Phone</h4>
-                                    <p class="text-gray-600">+(63)-930-7144-465</p>
-                                </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-blue-600"></i>
                             </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-green-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium">Email</h4>
-                                    <p class="text-gray-600">jerdonphilimacaraeg@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-purple-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-purple-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium">Location</h4>
-                                    <p class="text-gray-600">Pangasinan, Philippines</p>
-                                </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-gray-600">+(63) 930-7144-465</p>
                             </div>
                         </div>
 
-                        <div class="mt-8">
-                            <h4 class="font-medium mb-4">Follow Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://www.facebook.com/Philip.Je.Mac" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Facebook"
-                                    class="bg-gray-200 p-3 rounded-full hover:bg-blue-600 hover:text-white transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.instagram.com/_heyitsmejrd/" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Instagram"
-                                    class="bg-gray-200 p-3 rounded-full hover:bg-pink-500 hover:text-white transition">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/jerdon-philip-macaraeg-b45ba425a/" target="_blank"
-                                    rel="noopener noreferrer" aria-label="LinkedIn"
-                                    class="bg-gray-200 p-3 rounded-full hover:bg-blue-700 hover:text-white transition">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/JerdonPhilip" target="_blank" rel="noopener noreferrer"
-                                    aria-label="GitHub"
-                                    class="bg-gray-200 p-3 rounded-full hover:bg-gray-800 hover:text-white transition">
-                                    <i class="fab fa-github"></i>
-                                </a>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600">jerdonphilimacaraeg@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600">Pangasinan, Philippines</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-facebook-f text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Social</h4>
+                                <div class="flex space-x-3 mt-1">
+                                    <a href="https://www.facebook.com/Philip.Je.Mac" target="_blank"
+                                        class="text-gray-600 hover:text-blue-600">Facebook</a>
+                                    <a href="https://www.instagram.com/simple_jerdzz" target="_blank"
+                                        class="text-gray-600 hover:text-pink-500">Instagram</a>
+                                    <a href="https://github.com/JerdonPhilip" target="_blank"
+                                        class="text-gray-600 hover:text-gray-800">GitHub</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -572,18 +529,11 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <a href="#" class="text-xl font-bold text-white">Jerdon<span class="text-blue-400">Philip</span></a>
-                    <p class="text-gray-400 mt-2">Web Developer & UI Designer</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
-                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
-                    <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                    <p class="text-gray-400 mt-2">Web Developer</p>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2023 Jerdon Philip. All rights reserved.</p>
+                <p>&copy; 2026 Jerdon Philip. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -606,30 +556,30 @@
         });
 
         // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click',function() {
-            const mobileMenu=document.getElementById('mobile-menu');
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click',() => {
+            link.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
         });
 
         // Back to top button
-        const backToTopButton=document.getElementById('back-to-top');
+        const backToTopButton = document.getElementById('back-to-top');
 
-        window.addEventListener('scroll',function() {
-            if(window.pageYOffset>300) {
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('hidden');
             } else {
                 backToTopButton.classList.add('hidden');
             }
         });
 
-        backToTopButton.addEventListener('click',function() {
+        backToTopButton.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -637,44 +587,44 @@
         });
 
         // Form submission
-        document.getElementById('contact-form').addEventListener('submit',function(e) {
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const submitText=document.getElementById('submit-text');
-            const submitSpinner=document.getElementById('submit-spinner');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
 
             // Show loading state
-            submitText.textContent='Sending...';
+            submitText.textContent = 'Sending...';
             submitSpinner.classList.remove('hidden');
 
             // Simulate form submission
-            setTimeout(function() {
+            setTimeout(function () {
                 // Reset form
                 document.getElementById('contact-form').reset();
 
                 // Show success message
-                submitText.textContent='Message Sent!';
+                submitText.textContent = 'Message Sent!';
                 submitSpinner.classList.add('hidden');
 
                 // Reset button text after 3 seconds
-                setTimeout(function() {
-                    submitText.textContent='Send Message';
-                },3000);
-            },2000);
+                setTimeout(function () {
+                    submitText.textContent = 'Send Message';
+                }, 3000);
+            }, 2000);
         });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click',function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                const targetId=this.getAttribute('href');
-                if(targetId==='#') return;
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
 
-                const targetElement=document.querySelector(targetId);
-                if(targetElement) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop-80,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
