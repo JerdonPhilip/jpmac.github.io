@@ -4,633 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerdon Philip | Web Developer</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Jerdon Philip | Terminal Portfolio</title>
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M20 60 Q35 40 50 60 T80 60' fill='none' stroke='%233b82f6' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M20 75 Q35 55 50 75 T80 75' fill='none' stroke='%238b5cf6' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='35' r='6' fill='%233b82f6'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='65' text-anchor='middle' fill='%2300ff00' font-size='50' font-family='monospace'%3E%3E_%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .premium-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .premium-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .premium-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            filter: blur(40px);
-            z-index: 1;
-        }
-
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            right: -100px;
-        }
-
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            bottom: 100px;
-            left: -50px;
-        }
-
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            bottom: 200px;
-            right: 20%;
-        }
-
-        .premium-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-        }
-
-        .glow-text {
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-        }
-
-        .premium-btn {
-            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .premium-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: all 0.6s ease;
-        }
-
-        .premium-btn:hover::before {
-            left: 100%;
-        }
-
-        .premium-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-        }
-
-        .premium-btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .premium-btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .profile-frame {
-            position: relative;
-            border-radius: 20px;
-            padding: 8px;
-            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .profile-img {
-            border-radius: 16px;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .status-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(16, 185, 129, 0.9);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            margin: 40px 0;
-        }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% {
-                transform: translate(0, 0px);
-            }
-
-            50% {
-                transform: translate(0, -10px);
-            }
-
-            100% {
-                transform: translate(0, 0px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/docs/css/terminal.css">
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-blue-600">Jerdon<span class="text-gray-800">Philip</span></a>
-
-            <!-- Mobile menu button -->
-            <button type="button" id="menu-toggle" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="hover:text-blue-600 transition font-medium">Home</a>
-                <a href="#skills" class="hover:text-blue-600 transition font-medium">Skills</a>
-                <a href="#projects" class="hover:text-blue-600 transition font-medium">Projects</a>
-                <a href="#contact" class="hover:text-blue-600 transition font-medium">Contact</a>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
-            <a href="#home" class="block py-2 hover:text-blue-600 transition font-medium">Home</a>
-            <a href="#skills" class="block py-2 hover:text-blue-600 transition font-medium">Skills</a>
-            <a href="#projects" class="block py-2 hover:text-blue-600 transition font-medium">Projects</a>
-            <a href="#contact" class="block py-2 hover:text-blue-600 transition font-medium">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Premium Hero Section -->
-    <section id="home" class="premium-hero min-h-screen py-20 text-white flex items-center">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-
-        <div class="container mx-auto px-4 hero-content">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
-                    <div class="mb-2 text-blue-600 text-4xl">Hello, I'm</div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 glow-text">Jerdon Philip</h1>
-                    <h2 class="text-xl md:text-2xl font-semibold mb-6 text-gray-300">Web Developer</h2>
-
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="premium-btn px-6 py-3 rounded-lg font-semibold text-white">
-                            View My Work
-                        </a>
-                        <a href="#contact" class="premium-btn-outline px-6 py-3 rounded-lg font-semibold text-white">
-                            Contact Me
-                        </a>
-                        <a href="assets/files/JERDON_MACARAEG_CV.pdf" download="JERDON_MACARAEG_CV.pdf" target="_blank"
-                            rel="noopener noreferrer"
-                            class="premium-btn-outline px-6 py-3 rounded-lg font-semibold text-white inline-flex items-center gap-2">
-                            <i class="fas fa-download"></i>
-                            Download My Resume
-                            <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="md:w-2/5 flex justify-center" data-aos="fade-left" data-aos-delay="200">
-                    <div class="profile-frame floating">
-                        <div class="bg-gray-800 rounded-xl overflow-hidden">
-                            <img src="assets/images/profile_2.jpg" alt="Jerdon Philip - Web Developer & Designer"
-                                class="profile-img">
-                            <div class="status-badge">
-                                <i class="fas fa-circle mr-1 text-xs animate-pulse"></i> Active
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-divider"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="premium-card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-400 mb-3">
-                        <i class="fas fa-lightbulb text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2">Innovative Solutions</h3>
-                    <p class="text-sm text-gray-400">Custom web applications tailored to your specific business needs
-                    </p>
-                </div>
-
-                <div class="premium-card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-green-400 mb-3">
-                        <i class="fas fa-paint-brush text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2">Premium Design</h3>
-                    <p class="text-sm text-gray-400">Beautiful, intuitive interfaces that enhance user experience</p>
-                </div>
-
-                <div class="premium-card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-purple-400 mb-3">
-                        <i class="fas fa-rocket text-2xl"></i>
-                    </div>
-                    <h3 class="font-semibold mb-2">Fast Performance</h3>
-                    <p class="text-sm text-gray-400">Optimized code and architecture for lightning-fast load times</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white my-1">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">
-                My <span class="text-blue-600">Skills</span>
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">Frontend Development</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        HTML/HTML5, CSS/CSS3, JavaScript, AngularJS, Tailwind CSS, Bootstrap, Responsive Design
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-server text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">Backend & Desktop</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        Node.js, Express.js, PHP, Python, Java, Electron, RESTful APIs, npm, Sequelize
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-database text-indigo-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">Database Systems</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        MySQL, PostgreSQL, SQLite
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-pen-nib text-yellow-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">UI/UX & Creative</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        Wireframes, Mockups, User Flows, Process Flows, Adobe Photoshop, Lightroom, Photography
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cloud-upload-alt text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">DevOps & Tools</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        Git, GitHub, CI/CD, Azure DevOps
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-briefcase text-red-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold mb-3 text-center text-gray-800">Operations</h3>
-                    <p class="text-sm text-gray-600 text-center leading-relaxed">
-                        Project Management, Business Operations, Professional Communication
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Featured <span class="text-blue-600">Projects</span></h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Here are some of my recent projects. Each one
-                was carefully crafted to solve specific problems and deliver exceptional user experiences.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
-                    data-aos="fade-up">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-                        <i class="fas fa-project-diagram text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold mb-2">Single-Page Wedding Landing Page</h3>
-                        <p class="text-gray-600 mb-4 flex-grow">Wedding Event Hub
-                            A garden-themed digital invitation and guest management platform featuring a personalized
-                            interactive photo gallery, and integrated venue navigation for
-                            guests.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">JavaScript</span>
-                        </div>
-                        <div class="flex justify-start">
-                            <a href="https://lumen-lens-ph.github.io/christopher-jhohanna-wedding/" target="_blank"
-                                rel="noopener noreferrer" aria-label="View Project"
-                                class="text-blue-600 hover:underline font-medium">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
-                        <i class="fas fa-tasks text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
-                        <p class="text-gray-600 mb-4 flex-grow">A productivity application for organizing tasks, setting
-                            deadlines, and tracking progress — currently in active
-                            development.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">JavaScript</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Vue</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-                        </div>
-                        <div class="flex justify-start">
-                            <a href="\docs\assets\html\maintenance\maintenance.html"
-                                class="text-blue-600 hover:underline font-medium">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-semibold mb-2">Inventory Management System</h3>
-                        <p class="text-gray-600 mb-4 flex-grow">A cross-company inventory tracking system unifying
-                            logistics
-                            between development corp
-                            and trading surplus mall. Built with Electron and Tailwind CSS — currently in active
-                            development.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">JavaScript</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Electron</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">PostgreSQL</span>
-                        </div>
-                        <div class="flex justify-start">
-                            <a href="#" class="text-blue-600 hover:underline font-medium">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Get In <span class="text-blue-600">Touch</span></h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Have a project in mind or want to discuss
-                potential opportunities? Feel free to reach out!</p>
-
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-phone text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Phone</h4>
-                                <p class="text-gray-600">+(63) 930-7144-465</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-green-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-green-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Email</h4>
-                                <p class="text-gray-600">jerdonphilimacaraeg@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-purple-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-600">Pangasinan, Philippines</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-pink-100 p-3 rounded-full mr-4">
-                                <i class="fab fa-facebook-f text-pink-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Social</h4>
-                                <div class="flex space-x-3 mt-1">
-                                    <a href="https://www.facebook.com/Philip.Je.Mac" target="_blank"
-                                        class="text-gray-600 hover:text-blue-600">Facebook</a>
-                                    <a href="https://www.instagram.com/simple_jerdzz" target="_blank"
-                                        class="text-gray-600 hover:text-pink-500">Instagram</a>
-                                    <a href="https://github.com/JerdonPhilip" target="_blank"
-                                        class="text-gray-600 hover:text-gray-800">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-xl font-bold text-white">Jerdon<span class="text-blue-400">Philip</span></a>
-                    <p class="text-gray-400 mt-2">Web Developer</p>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2026 Jerdon Philip. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top"
-        class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition hidden z-50"
-        aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+<body class="terminal-bg">
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
     </button>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
+    <!-- Quick Commands Panel (Mobile) -->
+    <div class="quick-commands-panel" id="quickCommandsPanel">
+        <div class="quick-commands-header">
+            <span class="quick-commands-title">Quick Commands</span>
+            <button class="quick-commands-close" id="quickCommandsClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="quick-commands-list">
+            <button class="quick-command-btn" data-command="about">
+                <i class="fas fa-user"></i> About Me
+            </button>
+            <button class="quick-command-btn" data-command="skills">
+                <i class="fas fa-code"></i> Skills
+            </button>
+            <button class="quick-command-btn" data-command="projects">
+                <i class="fas fa-folder"></i> Projects
+            </button>
+            <button class="quick-command-btn" data-command="contact">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <button class="quick-command-btn" data-command="resume">
+                <i class="fas fa-download"></i> Download Resume
+            </button>
+            <button class="quick-command-btn" data-command="social">
+                <i class="fas fa-share-alt"></i> Social Links
+            </button>
+            <button class="quick-command-btn" data-command="neofetch">
+                <i class="fas fa-terminal"></i> System Info
+            </button>
+            <button class="quick-command-btn" data-command="clear">
+                <i class="fas fa-eraser"></i> Clear Screen
+            </button>
+        </div>
+    </div>
 
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
+    <div class="terminal-container">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <div class="terminal-dot" style="background: #ff5f56;"></div>
+                <div class="terminal-dot" style="background: #ffbd2e;"></div>
+                <div class="terminal-dot" style="background: #27c93f;"></div>
+            </div>
+            <div class="terminal-title">
+                <span class="terminal-title-text">jerdon@portfolio</span>
+                <span class="terminal-title-separator">—</span>
+                <span class="terminal-title-path">~/terminal</span>
+            </div>
+            <div class="terminal-actions">
+                <button class="terminal-action-btn" id="minimizeBtn" aria-label="Minimize" title="Minimize">
+                    <i class="fas fa-window-minimize"></i>
+                </button>
+                <button class="terminal-action-btn" id="maximizeBtn" aria-label="Maximize" title="Maximize">
+                    <i class="fas fa-window-maximize"></i>
+                </button>
+                <button class="terminal-action-btn" id="closeBtn" aria-label="Close" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
+        <!-- Terminal Output -->
+        <div class="terminal-output" id="terminalOutput">
+            <!-- Initial content will be generated by JS -->
+        </div>
 
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
+        <!-- Mobile Swipe Hint -->
+        <div class="swipe-hint" id="swipeHint">
+            <i class="fas fa-chevron-left"></i>
+            <span>Swipe left for commands</span>
+            <i class="fas fa-chevron-right"></i>
+        </div>
 
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
+        <!-- Terminal Input -->
+        <div class="terminal-input-line">
+            <div class="prompt-container">
+                <span class="prompt prompt-line1">┌─[<span class="prompt-user">jerdon</span>@<span
+                        class="prompt-host">portfolio</span>]─[<span class="prompt-path">~</span>]</span>
+                <span class="prompt prompt-line2">└──╼ $</span>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="terminalInput" class="terminal-input" autofocus autocomplete="off"
+                    spellcheck="false" placeholder="Type a command...">
+                <span class="cursor" id="cursor"></span>
+            </div>
+            <button class="send-btn" id="sendBtn" aria-label="Send command">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
 
-        backToTopButton.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
 
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
+    <!-- Hidden regular sections for SEO and accessibility -->
+    <div class="sr-only" aria-hidden="true">
+        <h1>Jerdon Philip - Web Developer Portfolio</h1>
+        <p>Frontend Development, Backend Development, Database Systems, UI/UX Design</p>
+    </div>
 
-            const submitText = document.getElementById('submit-text');
-            const submitSpinner = document.getElementById('submit-spinner');
-
-            // Show loading state
-            submitText.textContent = 'Sending...';
-            submitSpinner.classList.remove('hidden');
-
-            // Simulate form submission
-            setTimeout(function () {
-                // Reset form
-                document.getElementById('contact-form').reset();
-
-                // Show success message
-                submitText.textContent = 'Message Sent!';
-                submitSpinner.classList.add('hidden');
-
-                // Reset button text after 3 seconds
-                setTimeout(function () {
-                    submitText.textContent = 'Send Message';
-                }, 3000);
-            }, 2000);
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="/docs/js/terminal.js"></script>
 </body>
 
 </html>
