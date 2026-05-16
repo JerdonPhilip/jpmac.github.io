@@ -79,6 +79,7 @@ function showHelp() {
 
 <span class="output-warning">📄 Actions</span>
   <span class="output-success">resume</span>      • Download resume (PDF)
+  <span class="output-success">showresume</span>  • View resume in terminal
 
 <span class="divider">══════════════════════════════════════════════════════════</span>
 <span class="output-dim">💡 Pro Tips:</span>
@@ -431,6 +432,168 @@ function downloadResume() {
     }, 800);
 }
 
+function showResume() {
+    const resumeText = `
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="section-title">📄 RESUME</span>
+<span class="divider">══════════════════════════════════════════════════════════</span>
+
+<span class="output-highlight">JERDON PHILIP MACARAEG</span>
+<span class="output-dim">#81 Tambac, Malasiqui, Pangasinan | 09168745394 | jerdonphilipmacaraeg@gmail.com</span>
+<span class="output-success">FULL-STACK DEVELOPER | QA SPECIALIST</span>
+
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="section-title">SUMMARY</span>
+<span class="divider">══════════════════════════════════════════════════════════</span>
+Experienced Full-Stack Engineer, QA professional, and independent business owner
+with a focus on building resilient tools that solve real-world problems. Grounded
+in a strong quality assurance background—ranging from manual testing roots to
+modern end-to-end automation with Playwright—I prioritize robust and thoroughly
+validated code delivery. Highly adept at auditing full-stack applications using
+Postman, browser DevTools, and Google Lighthouse and specialized in architecting
+systems from Electron-based desktop apps to automated Azure cloud deployments.
+I combine technical depth in Node.js and SQL with a rigorous testing mindset and
+a sharp eye for UI/UX to ensure every product is as stable and high-performing
+as it is intuitive.
+
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="section-title">WORK EXPERIENCE</span>
+<span class="divider">══════════════════════════════════════════════════════════</span>
+
+<span class="output-warning">Lead Software Engineer (Freelance)</span>
+<span class="output-dim">Sakura Steel Development Corp & GT Sakura Trading Surplus Mall</span>
+<span class="output-dim">January 2026 - Present</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Directing the full-stack development of a cross-company</span>
+<span class="output-info">  Inventory Tracking System designed to unify logistics</span>
+<span class="output-info">  between the development corp and the trading surplus mall.</span>
+<span class="output-info">• Architecting a scalable desktop application utilizing</span>
+<span class="output-info">  Electron and modern JavaScript.</span>
+<span class="output-info">• Designing and implementing the front-end user experience</span>
+<span class="output-info">  using Tailwind CSS to ensure a clean, utility-driven,</span>
+<span class="output-info">  and consistent interface across all inventory modules.</span>
+<span class="output-info">• Taking full ownership of the project lifecycle—from</span>
+<span class="output-info">  initial requirements gathering to active coding—as the</span>
+<span class="output-info">  sole developer on the project.</span>
+<span class="output-info">• Developing and executing rigorous QA workflows,</span>
+<span class="output-info">  integrating Playwright for automated end-to-end testing</span>
+<span class="output-info">  to validate core system features and ensure software</span>
+<span class="output-info">  stability during the active build process.</span>
+
+<span class="output-warning">Business Manager / Operations Lead</span>
+<span class="output-dim">Donato's Space Rental</span>
+<span class="output-dim">February 2026 - Present</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Oversee daily operations and tenant relations for a</span>
+<span class="output-info">  local rental property business, ensuring high occupancy</span>
+<span class="output-info">  rates and streamlined administrative processes.</span>
+<span class="output-info">• Managed end-to-end leasing workflows, including contract</span>
+<span class="output-info">  preparation, payment tracking, and property maintenance</span>
+<span class="output-info">  scheduling.</span>
+<span class="output-info">• Acted as the primary point of contact for facility</span>
+<span class="output-info">  inquiries, resolving tenant issues promptly while</span>
+<span class="output-info">  maintaining property standards and compliance.</span>
+
+<span class="output-warning">Lead Photographer & Founder</span>
+<span class="output-dim">Lumen Lens Studios</span>
+<span class="output-dim">August 2025 - Present</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Capturing the big moments for clients, from the energy</span>
+<span class="output-info">  of a wedding to the personal feel of a portrait session.</span>
+<span class="output-info">• Handling the entire creative process, including scout</span>
+<span class="output-info">  locations, directing shots on the day, and the detailed</span>
+<span class="output-info">  editing work that goes into the final delivery.</span>
+<span class="output-info">• Building a brand from the ground up, focusing on clear</span>
+<span class="output-info">  communication and making sure every client feels</span>
+<span class="output-info">  comfortable and confident in front of the camera.</span>
+
+<span class="output-warning">Web Developer</span>
+<span class="output-dim">Almont Business Connect Inc.</span>
+<span class="output-dim">July 2023 - December 2025</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Led UI and UX development in the early stages of the</span>
+<span class="output-info">  system. Used Bootstrap and custom CSS to build the</span>
+<span class="output-info">  interface. Managed design for all modules with consistent</span>
+<span class="output-info">  quality across the Oasis module, Visits modules, and</span>
+<span class="output-info">  Other Note modules.</span>
+<span class="output-info">• Managed CI and CD pipelines using Azure DevOps to ensure</span>
+<span class="output-info">  consistent and automated deployment of software updates.</span>
+<span class="output-info">  Supported a scalable cloud environment on Microsoft Azure.</span>
+<span class="output-info">• Supported Oasis validations and workflows, ensuring</span>
+<span class="output-info">  maintenance and updates on an annual basis.</span>
+<span class="output-info">• Led and implemented Physician Orders validation and</span>
+<span class="output-info">  features, including full printing workflow. Developed</span>
+<span class="output-info">  associated CRUD functions.</span>
+<span class="output-info">• Supported the Summary and Reports features for the</span>
+<span class="output-info">  healthcare system using ORM queries in Sequelize and</span>
+<span class="output-info">  custom queries in MySQL.</span>
+<span class="output-info">• Developed the patient calendar sticky note feature.</span>
+<span class="output-info">• Led validation processes for Patient Intake.</span>
+
+<span class="output-warning">Intern Web Developer</span>
+<span class="output-dim">Almont Business Connect Inc.</span>
+<span class="output-dim">January 2023 - May 2023</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Contributed to the development of Healthcare Visit Notes</span>
+<span class="output-info">  by creating front-end components and back-end logic to</span>
+<span class="output-info">  support accurate patient charting.</span>
+<span class="output-info">• Assisted the development team in coding and testing new</span>
+<span class="output-info">  software features, ensuring all applications met</span>
+<span class="output-info">  functionality and quality standards prior to release.</span>
+<span class="output-info">• Collaborated with senior developers to troubleshoot and</span>
+<span class="output-info">  resolve technical issues, including bugs and performance</span>
+<span class="output-info">  bottlenecks, gaining hands-on experience in debugging</span>
+<span class="output-info">  complex systems.</span>
+<span class="output-info">• Authored and maintained project documentation, supporting</span>
+<span class="output-info">  team knowledge sharing and providing a reliable reference</span>
+<span class="output-info">  for future maintenance and onboarding.</span>
+
+<span class="output-warning">Intern Quality Assurance</span>
+<span class="output-dim">Almont Business Connect Inc.</span>
+<span class="output-dim">January 2023 - May 2023</span>
+<span class="divider">──────────────────────────────────────────────────────────</span>
+<span class="output-info">• Conducted comprehensive manual testing of software</span>
+<span class="output-info">  applications and features to verify functionality,</span>
+<span class="output-info">  usability, and compliance with quality and performance</span>
+<span class="output-info">  standards.</span>
+<span class="output-info">• Created and maintained detailed test case documentation,</span>
+<span class="output-info">  standardizing procedures to ensure consistent, accurate,</span>
+<span class="output-info">  and repeatable quality assurance processes.</span>
+<span class="output-info">• Collaborated with the development team to identify,</span>
+<span class="output-info">  document, and track defects through resolution, improving</span>
+<span class="output-info">  code quality and ensuring smoother software releases.</span>
+
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="section-title">EDUCATION</span>
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="output-success">Bachelor of Science in Information Technology</span>
+<span class="output-dim">University Of Pangasinan - PHINMA</span>
+
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="section-title">ADDITIONAL INFORMATION</span>
+<span class="divider">══════════════════════════════════════════════════════════</span>
+
+<span class="output-highlight">Technical Skills:</span>
+<span class="output-dim">Wireframes, Mockups, User Flows, Process Flows, Adobe Photoshop,</span>
+<span class="output-dim">HTML/HTML5, Bootstrap, Responsive Design, Tailwind CSS, CSS/CSS3,</span>
+<span class="output-dim">Python, Java, AngularJS, PHP, JavaScript, Playwright, NodeJS,</span>
+<span class="output-dim">Express.js, npm, RESTful APIs, Sequelize, MySQL, SQLite,</span>
+<span class="output-dim">PostgreSQL, Git, CI/CD, and Azure DevOps, Electron, Photography,</span>
+<span class="output-dim">Digital Post-Processing (Lightroom), Business Operations,</span>
+<span class="output-dim">Project Management.</span>
+
+<span class="output-highlight">Languages:</span>
+<span class="output-dim">English and Tagalog</span>
+
+<span class="output-highlight">Awards/Activities:</span>
+<span class="output-dim">Received the "Rookie of the Year" award for outstanding performance.</span>
+
+<span class="divider">══════════════════════════════════════════════════════════</span>
+<span class="output-dim">Type resume to download PDF version | Type contact to get in touch</span>`;
+
+    addOutput(resumeText, '');
+}
+
 function showWhoami() {
     addOutput('jerdonphilipmacaraeg', 'success');
     addOutput('Full-Stack Developer | QA Specialist | Entrepreneur', 'dim');
@@ -524,6 +687,7 @@ const commands = {
     'projects': showProjects,
     'contact': showContact,
     'resume': downloadResume,
+    'showresume': showResume,
     'neofetch': showNeofetch,
     'clear': clearTerminal,
     'whoami': showWhoami,
@@ -546,6 +710,7 @@ const aliases = {
     'p': 'projects',
     'c': 'contact',
     'r': 'resume',
+    'sr': 'showresume',
     'neo': 'neofetch',
     'clr': 'clear',
     'w': 'whoami',
@@ -836,7 +1001,3 @@ if (document.readyState === 'loading') {
     init();
     if (terminalInput) terminalInput.focus();
 }
-
-console.log('%c🎯 Jerdon Philip Macaraeg - Terminal Portfolio v3.0.0', 'color: #00ff00; font-size: 16px;');
-console.log('%c💼 Full-Stack Developer | QA Specialist', 'color: #00ccff; font-size: 14px;');
-console.log('%c📋 Type help to explore commands', 'color: #ffaa00;');
