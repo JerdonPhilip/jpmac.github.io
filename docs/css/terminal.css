@@ -27,7 +27,6 @@ body {
     color: var(--text-primary);
     height: 100vh;
     height: 100dvh;
-    /* Dynamic viewport height for mobile */
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
@@ -182,7 +181,7 @@ body {
     padding: 12px 16px;
     border-top: 1px solid var(--terminal-border);
     background: #0d0d0d;
-    gap: 10px;
+    gap: 0;
     min-height: 60px;
 }
 
@@ -193,11 +192,16 @@ body {
     line-height: 1.4;
     font-size: 0.8rem;
     flex-shrink: 0;
+    margin-right: 0;
 }
 
 .prompt {
     color: var(--text-primary);
     font-weight: 600;
+}
+
+.prompt-line1 {
+    color: var(--text-primary);
 }
 
 .prompt-user {
@@ -213,7 +217,7 @@ body {
 }
 
 .prompt-line2 {
-    color: var(--text-error);
+    color: #ff4444;
     font-weight: 700;
 }
 
@@ -222,6 +226,10 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    margin-left: 8px;
+    padding-top: 0;
+    margin-top: 1.4em;
+    margin-left: -8.3em;
 }
 
 .terminal-input {
@@ -233,7 +241,9 @@ body {
     outline: none;
     width: 100%;
     caret-color: var(--text-primary);
-    padding: 4px 0;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .terminal-input::placeholder {
@@ -251,8 +261,10 @@ body {
     height: 16px;
     background: var(--text-primary);
     animation: blink 1s step-end infinite;
-    margin-left: 2px;
+    margin-left: 1px;
     border-radius: 1px;
+    flex-shrink: 0;
+    align-self: center;
 }
 
 .send-btn {
@@ -263,10 +275,14 @@ body {
     padding: 8px 12px;
     border-radius: 6px;
     transition: all 0.2s ease;
-    display: none;
-    /* Hidden on desktop, shown on mobile */
+    display: flex;
+    /* Changed from none to flex */
+    align-items: center;
+    justify-content: center;
     font-size: 0.9rem;
     flex-shrink: 0;
+    margin-left: 8px;
+    align-self: center;
 }
 
 .send-btn:hover {
@@ -285,18 +301,6 @@ body {
     word-wrap: break-word;
     white-space: pre-wrap;
     animation: fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-4px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .output-success {
@@ -323,9 +327,11 @@ body {
     color: #ffffff;
 }
 
+/* Command History */
 .command-history {
     color: #555;
     font-size: 0.8rem;
+    white-space: pre;
 }
 
 .command-history .prompt-user {
@@ -554,6 +560,19 @@ body {
     margin: 0 6px;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes pulse {
 
     0%,
@@ -566,7 +585,6 @@ body {
     }
 }
 
-/* Blink Animation */
 @keyframes blink {
 
     0%,
@@ -579,7 +597,10 @@ body {
     }
 }
 
-/* Responsive Design */
+/* ===========================================================================
+   RESPONSIVE DESIGN
+   =========================================================================== */
+
 @media (max-width: 1024px) {
     .terminal-output {
         padding: 16px;
@@ -620,12 +641,18 @@ body {
 
     .terminal-input-line {
         padding: 10px 12px;
-        gap: 6px;
+        gap: 4px;
         min-height: 50px;
     }
 
     .prompt-container {
         font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .input-wrapper {
+        margin-left: 4px;
+        margin-top: 1.3em;
     }
 
     .terminal-input {
@@ -634,9 +661,8 @@ body {
 
     .send-btn {
         display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 6px 10px;
+        font-size: 0.8rem;
     }
 
     .ascii-banner {
@@ -680,25 +706,36 @@ body {
 
     .terminal-input-line {
         padding: 8px 10px;
-        gap: 4px;
+        gap: 2px;
     }
 
     .prompt-container {
         font-size: 0.65rem;
-        line-height: 1.3;
+        line-height: 1.2;
     }
 
     .prompt-line1 {
         display: none;
-        /* Hide first line on very small screens */
     }
 
     .prompt-line2 {
         font-size: 0.7rem;
     }
 
+    .input-wrapper {
+        margin-left: 3px;
+        margin-top: 0;
+    }
+
     .terminal-input {
         font-size: 0.75rem;
+    }
+
+    .send-btn {
+        display: flex;
+        padding: 5px 8px;
+        font-size: 0.75rem;
+        margin-left: 4px;
     }
 
     .ascii-banner {

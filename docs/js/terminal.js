@@ -606,9 +606,6 @@ function detectMobile() {
     if (mobileMenuToggle) {
         mobileMenuToggle.style.display = isMobile ? 'flex' : 'none';
     }
-    if (sendBtn) {
-        sendBtn.style.display = isMobile ? 'flex' : 'none';
-    }
 }
 
 function setupEventListeners() {
@@ -819,15 +816,16 @@ function executeCommand(input) {
     if (terminalInput) terminalInput.focus();
 }
 
+// Add command echo
+function addCommandEcho(command) {
+    const echo = `<span class="command-history">┌─[<span class="prompt-user">jerdon</span>@<span class="prompt-host">portfolio</span>]─[<span class="prompt-path">~</span>]
+└──╼ $ ${escapeHtml(command)}</span>`;
+    addOutput(echo, 'dim');
+}
+
 // ===========================================================================
 // STARTUP
 // ===========================================================================
-
-setInterval(() => {
-    if (cursor) {
-        cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
-    }
-}, 530);
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
