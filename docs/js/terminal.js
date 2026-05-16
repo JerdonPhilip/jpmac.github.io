@@ -420,13 +420,13 @@ function showNeofetch() {
 function downloadResume() {
     addOutput('', '');
     addOutput('📥 Preparing resume download...', 'info');
-    addOutput('├─ File: JERDON_MACARAEG_CV.pdf', 'dim');
+    addOutput('├─ File: JERDON_MACARAEG-CV.pdf', 'dim');
     addOutput('├─ Format: PDF Document', 'dim');
     addOutput('├─ Candidate: Jerdon Philip Macaraeg', 'dim');
     addOutput('├─ Role: Full-Stack Developer | QA Specialist', 'dim');
 
     setTimeout(() => {
-        window.open('assets/files/JERDON_MACARAEG_CV.pdf', '_blank');
+        window.open('assets/files/JERDON_MACARAEG-CV.pdf', '_blank');
         addOutput('└─ ✅ Download initiated successfully!', 'success');
     }, 800);
 }
