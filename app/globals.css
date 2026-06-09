@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove default margins */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Pixel font styling (optional - add a pixel font later) */
+.font-pixel {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
