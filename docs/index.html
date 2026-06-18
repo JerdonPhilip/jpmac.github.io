@@ -4,129 +4,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerdon Philip | Terminal Portfolio</title>
+    <title>Jerdon Philip | Minimal Portfolio</title>
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='65' text-anchor='middle' fill='%2300ff00' font-size='50' font-family='monospace'%3E%3E_%3C/text%3E%3C/svg%3E">
-    <script src="https://cdn.tailwindcss.com"></script>
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ffffff'/%3E%3Ctext x='50' y='65' text-anchor='middle' fill='%234f46e5' font-size='50' font-family='monospace'%3EJP%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/terminal.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="./css/minimal.css">
 </head>
 
-<body class="terminal-bg">
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-        <i class="fas fa-bars"></i>
-    </button>
+<body class="text-gray-900 antialiased selection:bg-indigo-100 selection:text-indigo-700 hide-scrollbar">
 
-    <!-- Quick Commands Panel (Mobile) -->
-    <div class="quick-commands-panel" id="quickCommandsPanel">
-        <div class="quick-commands-header">
-            <span class="quick-commands-title">Quick Commands</span>
-            <button class="quick-commands-close" id="quickCommandsClose" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="quick-commands-list">
-            <button class="quick-command-btn" data-command="about">
-                <i class="fas fa-user"></i> About Me
-            </button>
-            <button class="quick-command-btn" data-command="skills">
-                <i class="fas fa-code"></i> Skills
-            </button>
-            <button class="quick-command-btn" data-command="projects">
-                <i class="fas fa-folder"></i> Projects
-            </button>
-            <button class="quick-command-btn" data-command="contact">
-                <i class="fas fa-envelope"></i> Contact
-            </button>
-            <button class="quick-command-btn" data-command="resume">
-                <i class="fas fa-download"></i> Download Resume
-            </button>
-            <button class="quick-command-btn" data-command="seeresume">
-                <i class="fas fa-file-alt"></i> View Resume
-            </button>
-            <button class="quick-command-btn" data-command="social">
-                <i class="fas fa-share-alt"></i> Social Links
-            </button>
-            <button class="quick-command-btn" data-command="neofetch">
-                <i class="fas fa-terminal"></i> System Info
-            </button>
-            <button class="quick-command-btn" data-command="clear">
-                <i class="fas fa-eraser"></i> Clear Screen
-            </button>
-        </div>
-    </div>
+    <!-- ========== NAVIGATION ========== -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-shadow duration-300"
+        id="mainHeader">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-18">
+                <!-- Logo -->
+                <a href="#hero"
+                    class="text-xl font-bold tracking-tight text-gray-900 hover:text-indigo-600 transition-colors duration-200">
+                    JP<span class="text-indigo-500">.</span>
+                </a>
 
-    <div class="terminal-container">
-        <!-- Terminal Header -->
-        <div class="terminal-header">
-            <div class="terminal-controls">
-                <div class="terminal-dot" style="background: #ff5f56;"></div>
-                <div class="terminal-dot" style="background: #ffbd2e;"></div>
-                <div class="terminal-dot" style="background: #27c93f;"></div>
-            </div>
-            <div class="terminal-title">
-                <span class="terminal-title-text">jerdon@portfolio</span>
-                <span class="terminal-title-separator">—</span>
-                <span class="terminal-title-path">~/terminal</span>
-            </div>
-            <div class="terminal-actions">
-                <button class="terminal-action-btn" id="minimizeBtn" aria-label="Minimize" title="Minimize">
-                    <i class="fas fa-window-minimize"></i>
-                </button>
-                <button class="terminal-action-btn" id="maximizeBtn" aria-label="Maximize" title="Maximize">
-                    <i class="fas fa-window-maximize"></i>
-                </button>
-                <button class="terminal-action-btn" id="closeBtn" aria-label="Close" title="Close">
-                    <i class="fas fa-times"></i>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8" aria-label="Desktop navigation">
+                    <a href="#about"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                    <a href="#skills"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Skills</a>
+                    <a href="#projects"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
+                    <a href="#contact"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                    <a href="#" id="desktopResumeBtn"
+                        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md">
+                        <i class="fas fa-download text-xs"></i> Resume
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobileMenuToggle"
+                    class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                    aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars text-lg" id="menuIcon"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Terminal Output -->
-        <div class="terminal-output" id="terminalOutput">
-            <!-- Initial content will be generated by JS -->
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu"
+            class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 bg-white border-b border-gray-100">
+            <nav class="px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+                <a href="#about"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">About</a>
+                <a href="#skills"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">Skills</a>
+                <a href="#projects"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">Projects</a>
+                <a href="#contact"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">Contact</a>
+                <a href="#" id="mobileResumeBtn"
+                    class="block px-4 py-3 rounded-lg text-sm font-medium text-indigo-600 hover:bg-indigo-50 transition-colors">
+                    <i class="fas fa-download mr-2 text-xs"></i> Download Resume
+                </a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Mobile Swipe Hint -->
-        <div class="swipe-hint" id="swipeHint">
-            <i class="fas fa-chevron-left"></i>
-            <span>Swipe left for commands</span>
-            <i class="fas fa-chevron-right"></i>
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative pt-20 pb-16 md:pt-28 md:pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Subtle accent dot -->
+            <div class="inline-block w-3 h-3 bg-indigo-500 rounded-full mb-6 animate-pulse-slow"></div>
+            <h1
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
+                Hi, I'm <span class="text-indigo-600">Jerdon Philip</span>
+            </h1>
+            <p class="mt-5 text-lg sm:text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                A full-stack web developer crafting clean, performant, and user-friendly digital experiences.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95">
+                    View My Work <i class="fas fa-arrow-down text-sm"></i>
+                </a>
+                <a href="#contact"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold text-gray-700 bg-white border-2 border-gray-200 rounded-full hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200 active:scale-95">
+                    Get In Touch <i class="fas fa-envelope text-sm"></i>
+                </a>
+            </div>
+            <!-- Social proof / quick links -->
+            <div class="mt-10 flex items-center justify-center gap-5 text-gray-400">
+                <a href="https://github.com/JerdonPhilip" aria-label="GitHub"
+                    class="hover:text-gray-800 transition-colors duration-200 text-xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jerdon-philip-macaraeg-b4363b222/" aria-label="LinkedIn"
+                    class="hover:text-indigo-600 transition-colors duration-200 text-xl"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/Philip.Je.Mac" aria-label="Facebook"
+                    class="hover:text-blue-500 transition-colors duration-200 text-xl"><i
+                        class="fab fa-facebook-f"></i></a>
+                <span class="text-gray-300">|</span>
+                <a href="mailto:jerdonphilipmacaraeg@gmail.com" aria-label="Email"
+                    class="hover:text-gray-800 transition-colors duration-200 text-xl"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
         </div>
+        <!-- Subtle gradient blob behind hero -->
+        <div
+            class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-50 rounded-full blur-3xl opacity-60 pointer-events-none -z-10">
+        </div>
+        <div
+            class="absolute -bottom-20 -left-20 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-50 pointer-events-none -z-10">
+        </div>
+    </section>
 
-        <!-- Terminal Input -->
-        <div class="terminal-input-line">
-            <div class="prompt-container">
-                <span class="prompt prompt-line1">┌─[<span class="prompt-user">jerdon</span>@<span
-                        class="prompt-host">portfolio</span>]─[<span class="prompt-path">~</span>]</span>
-                <span class="prompt prompt-line2">└──╼ $</span>
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+                <!-- Text -->
+                <div class="order-2 md:order-1 reveal">
+                    <span class="text-xs font-semibold tracking-widest uppercase text-indigo-500">About Me</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+                        Passionate about building for the web
+                    </h2>
+                    <p class="mt-5 text-base sm:text-lg text-gray-600 leading-relaxed">
+                        I specialize in creating modern web applications with a focus on performance, accessibility, and
+                        clean design. With full-stack expertise, health systems experience, and a passion for
+                        cutting-edge technologies, I bring ideas to life using industry best practices.
+                    </p>
+                    <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+                        When I'm not coding, you'll find me exploring new tech, contributing to open-source
+                        projects, or refining my design sensibilities.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span
+                            class="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-gray-700 rounded-full border border-gray-200">
+                            <i class="fas fa-code mr-1.5 text-gray-500"></i> Frontend
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-gray-700 rounded-full border border-gray-200">
+                            <i class="fas fa-server mr-1.5 text-gray-500"></i> Backend
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-gray-700 rounded-full border border-gray-200">
+                            <i class="fas fa-pencil-ruler mr-1.5 text-gray-500"></i> UI/UX
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-gray-700 rounded-full border border-gray-200">
+                            <i class="fas fa-database mr-1.5 text-gray-500"></i> Database Systems
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-gray-700 rounded-full border border-gray-200">
+                            <i class="fas fa-robot mr-1.5 text-gray-500"></i> AI
+                        </span>
+                    </div>
+                </div>
+                <!-- Visual placeholder -->
+                <div class="order-1 md:order-2 reveal flex justify-center">
+                    <div
+                        class="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gradient-to-br from-indigo-100 to-gray-100 rounded-3xl flex items-center justify-center shadow-sm border border-gray-100">
+                        <i class="fas fa-code text-6xl sm:text-7xl text-indigo-400"></i>
+                    </div>
+                </div>
             </div>
-            <div class="input-wrapper">
-                <input type="text" id="terminalInput" class="terminal-input" autofocus autocomplete="off"
-                    spellcheck="false" placeholder="Type a command...">
+        </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center reveal">
+                <span class="text-xs font-semibold tracking-widest uppercase text-indigo-500">Skills</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Technologies I work with
+                </h2>
+                <p class="mt-3 text-gray-500 max-w-xl mx-auto">A curated set of tools and technologies I use to build
+                    robust applications.</p>
             </div>
-            <button class="send-btn" id="sendBtn" aria-label="Send command">
-                <i class="fas fa-paper-plane"></i>
+
+            <div class="mt-16 space-y-16">
+
+                <!-- Frontend Development -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-code text-indigo-500"></i> Frontend Development
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-html5 text-3xl text-orange-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">HTML5</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-css3-alt text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">CSS3</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-js-square text-3xl text-yellow-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">JavaScript (ES6+)</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-angular text-3xl text-red-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">AngularJS</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-bootstrap text-3xl text-purple-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Bootstrap</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-wind text-3xl text-cyan-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Tailwind CSS</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-mobile-alt text-3xl text-indigo-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Responsive Design</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-pencil-ruler text-3xl text-pink-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">UI/UX Design</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-draw-polygon text-3xl text-teal-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Wireframing</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-image text-3xl text-amber-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Mockups</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-route text-3xl text-blue-400 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">User Flow Design</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-project-diagram text-3xl text-indigo-400 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Process Flow Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-server text-indigo-500"></i> Backend Development
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-node text-3xl text-green-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Node.js</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-code text-3xl text-gray-700 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Express.js</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-plug text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">RESTful APIs</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-layer-group text-3xl text-indigo-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Sequelize ORM</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-php text-3xl text-purple-700 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">PHP</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-java text-3xl text-red-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Java</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-python text-3xl text-blue-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Python</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-npm text-3xl text-red-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">npm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Management -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-database text-indigo-500"></i> Database Management
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-database text-3xl text-blue-700 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">MySQL</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-database text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">PostgreSQL</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-database text-3xl text-gray-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">SQLite</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-sitemap text-3xl text-teal-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Database Design</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-tachometer-alt text-3xl text-orange-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Query Optimization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality Assurance & Testing -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-vial text-indigo-500"></i> Quality Assurance & Testing
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-play-circle text-3xl text-green-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Playwright</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-mouse-pointer text-3xl text-gray-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Manual Testing</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-check-double text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">End-to-End Testing</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-clipboard-list text-3xl text-amber-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Test Case Creation</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-bug text-3xl text-red-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Bug Tracking</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-paper-plane text-3xl text-orange-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Postman</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-laptop-code text-3xl text-gray-700 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Browser DevTools</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-tachometer-alt text-3xl text-blue-400 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Google Lighthouse</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-cloud text-indigo-500"></i> DevOps & Cloud
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-microsoft text-3xl text-blue-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Microsoft Azure</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-microsoft text-3xl text-indigo-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Azure DevOps</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-sync-alt text-3xl text-teal-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">CI/CD Pipelines</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fab fa-git-alt text-3xl text-orange-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Version Control (Git)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Application Development -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-desktop text-indigo-500"></i> Desktop Application Development
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-atom text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Electron.js</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & Creative Tools -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-palette text-indigo-500"></i> Design & Creative Tools
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-camera-retro text-3xl text-blue-700 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Adobe Photoshop</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-sun text-3xl text-amber-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Adobe Lightroom</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-edit text-3xl text-gray-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Digital Post-Processing</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-camera text-3xl text-gray-800 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Photography</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 reveal">
+                        <i class="fas fa-briefcase text-indigo-500"></i> Professional Skills
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-tasks text-3xl text-indigo-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Project Management</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-chart-line text-3xl text-green-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Business Operations</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-clipboard-check text-3xl text-blue-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Requirements Gathering</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-file-alt text-3xl text-gray-600 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Technical Documentation</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-users text-3xl text-teal-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Team Collaboration</p>
+                        </div>
+                        <div
+                            class="skill-card reveal bg-white border border-gray-100 rounded-2xl p-5 text-center hover:shadow-lg hover:border-indigo-200 transition-all duration-300 cursor-default">
+                            <i class="fas fa-lightbulb text-3xl text-yellow-500 mb-3"></i>
+                            <p class="font-semibold text-gray-800 text-sm">Problem Solving</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="py-16 md:py-24 bg-gray-50/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center reveal">
+                <span class="text-xs font-semibold tracking-widest uppercase text-indigo-500">Projects</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Selected work</h2>
+                <p class="mt-3 text-gray-500 max-w-xl mx-auto">A few projects that showcase my skills and passion for
+                    building.</p>
+            </div>
+            <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card 1: Terminal Portfolio -->
+                <div
+                    class="project-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div
+                        class="h-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden shrink-0">
+                        <div class="absolute top-0 left-0 right-0 h-6 bg-gray-800 flex items-center gap-1.5 px-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                        </div>
+                        <div class="mt-4 font-mono text-xs text-green-400 space-y-1 px-6">
+                            <p><span class="text-blue-400">user@portfolio</span>:<span class="text-purple-400">~</span>$
+                                whoami</p>
+                            <p class="text-white">> Full-Stack Developer</p>
+                            <p class="opacity-50"><span class="text-blue-400">user@portfolio</span>:<span
+                                    class="text-purple-400">~</span>$ ls skills/</p>
+                            <p class="text-white opacity-50">> HTML CSS JS TailwindCSS</p>
+                            <p class="animate-pulse">▊</p>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="font-bold text-gray-900 text-lg">Terminal Portfolio</h3>
+                        <p class="mt-2 text-sm text-gray-500 leading-relaxed">A retro terminal-style portfolio website
+                            with command-line navigation, interactive prompts, and a nostalgic developer aesthetic.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span
+                                class="text-xs px-2 py-1 bg-orange-100 text-orange-700 rounded-full font-medium">HTML5</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">CSS3</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full font-medium">JavaScript</span>
+                            <span class="text-xs px-2 py-1 bg-cyan-100 text-cyan-700 rounded-full font-medium">Tailwind
+                                CSS</span>
+                        </div>
+                        <div class="mt-auto pt-4 flex gap-3">
+                            <a href="https://github.com/JerdonPhilip/terminal-portfolio"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fab fa-github mr-1.5"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: TaskMate -->
+                <div
+                    class="project-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div
+                        class="h-44 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center relative overflow-hidden shrink-0">
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="text-8xl absolute -top-4 -left-4">⚔️</div>
+                            <div class="text-6xl absolute top-8 right-4">🛡️</div>
+                            <div class="text-5xl absolute bottom-2 left-8">🗡️</div>
+                        </div>
+                        <i
+                            class="fas fa-dragon text-5xl text-purple-500 group-hover:scale-110 transition-transform duration-300 relative z-10"></i>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="font-bold text-gray-900 text-lg">TaskMate</h3>
+                        <p class="mt-2 text-sm text-gray-500 leading-relaxed">RPG-themed task management dashboard with
+                            character progression, dungeon exploration, loot system, and encrypted saves. Turn daily
+                            tasks into epic quests!</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span
+                                class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">React</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-teal-100 text-teal-700 rounded-full font-medium">TypeScript</span>
+                            <span class="text-xs px-2 py-1 bg-cyan-100 text-cyan-700 rounded-full font-medium">Tailwind
+                                CSS</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded-full font-medium">Zustand</span>
+                            <span class="text-xs px-2 py-1 bg-pink-100 text-pink-700 rounded-full font-medium">Framer
+                                Motion</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full font-medium">dnd-kit</span>
+                        </div>
+                        <div class="mt-auto pt-4 flex gap-3">
+                            <a href="https://jerdonphilip.github.io/TaskMate/"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fas fa-external-link-alt mr-1.5"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/JerdonPhilip/TaskMate"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fab fa-github mr-1.5"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Weatherly -->
+                <div
+                    class="project-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group sm:col-span-2 lg:col-span-1 flex flex-col">
+                    <div
+                        class="h-44 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 flex items-center justify-center relative overflow-hidden shrink-0">
+                        <div class="absolute inset-0 opacity-20">
+                            <div class="absolute top-4 left-1/4 text-3xl">☀️</div>
+                            <div class="absolute top-12 right-1/4 text-2xl">🌧️</div>
+                            <div class="absolute bottom-6 left-1/3 text-2xl">❄️</div>
+                        </div>
+                        <i
+                            class="fas fa-cloud-sun text-5xl text-white group-hover:scale-110 transition-transform duration-300 relative z-10 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="font-bold text-gray-900 text-lg">Weatherly</h3>
+                        <p class="mt-2 text-sm text-gray-500 leading-relaxed">Real-time weather dashboard with
+                            geolocation, animated backgrounds, activity recommendations, AQI, and precipitation radar.
+                        </p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">Framer Motion</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">Open-Meteo API</span>
+                        </div>
+                        <div class="mt-auto pt-4 flex gap-3">
+                            <a href="https://jerdonphilip.github.io/app-weather/"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fas fa-external-link-alt mr-1.5"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/JerdonPhilip/app-weather"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fab fa-github mr-1.5"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Word of God (Bible Wordle) -->
+                <div
+                    class="project-card reveal bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div
+                        class="h-44 bg-gradient-to-br from-blue-400/30 via-purple-400/30 to-pink-400/30 flex items-center justify-center relative overflow-hidden shrink-0 backdrop-blur-sm">
+                        <!-- Animated blobs background -->
+                        <div class="absolute inset-0">
+                            <div
+                                class="absolute -top-10 -left-10 w-40 h-40 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+                            </div>
+                            <div
+                                class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+                            </div>
+                            <div
+                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000">
+                            </div>
+                        </div>
+                        <!-- Glass overlay -->
+                        <div class="absolute inset-0 bg-white/20 backdrop-blur-md"></div>
+                        <!-- Icon -->
+                        <i
+                            class="fas fa-bible text-5xl text-white group-hover:scale-110 transition-transform duration-300 relative z-10 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="font-bold text-gray-900 text-lg">Word of God</h3>
+                        <p class="mt-2 text-sm text-gray-500 leading-relaxed">A premium Bible Wordle game with
+                            glassmorphism UI, daily challenges, hints, verse reveals, and multiple word-length
+                            categories. Built with React & Tailwind.</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span
+                                class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">React</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full font-medium">Vite</span>
+                            <span class="text-xs px-2 py-1 bg-cyan-100 text-cyan-700 rounded-full font-medium">Tailwind
+                                CSS</span>
+                            <span
+                                class="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full font-medium">Bible
+                                API</span>
+                        </div>
+                        <div class="mt-auto pt-4 flex gap-3">
+                            <a href="https://jerdonphilip.github.io/bible-wordle/"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fas fa-external-link-alt mr-1.5"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/JerdonPhilip/bible-wordle"
+                                class="inline-flex items-center px-4 py-2 text-xs font-semibold text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <i class="fab fa-github mr-1.5"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RESUME SECTION ========== -->
+    <section id="resume" class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <span class="text-xs font-semibold tracking-widest uppercase text-indigo-500">Resume</span>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Want to know more?</h2>
+            <p class="mt-3 text-gray-500 max-w-lg mx-auto">Download my resume to get the full picture of my
+                experience and background.</p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="./assets/files/resume.pdf" id="downloadResumeBtn" download
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50/70">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <span class="text-xs font-semibold tracking-widest uppercase text-indigo-500">Contact</span>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Let's work together</h2>
+            <p class="mt-3 text-gray-500 max-w-lg mx-auto">Have a project in mind or just want to say hello? I'd love to
+                hear from you.</p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:jerdonphilipmacaraeg@gmail.com"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95">
+                    <i class="fas fa-envelope"></i> jerdonphilipmacaraeg@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/jerdon-philip-macaraeg-b4363b222/"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-gray-700 bg-white border-2 border-gray-200 rounded-full hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200 active:scale-95">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+            </div>
+            <!-- Social links row -->
+            <div class="mt-10 flex items-center justify-center gap-5 text-gray-400">
+                <a href="https://github.com/JerdonPhilip" aria-label="GitHub"
+                    class="hover:text-gray-800 transition-colors duration-200 text-xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jerdon-philip-macaraeg-b4363b222/" aria-label="LinkedIn"
+                    class="hover:text-indigo-600 transition-colors duration-200 text-xl"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/Philip.Je.Mac" aria-label="Facebook"
+                    class="hover:text-blue-500 transition-colors duration-200 text-xl"><i
+                        class="fab fa-facebook-f"></i></a>
+                <span class="text-gray-300">|</span>
+                <a href="mailto:jerdonphilipmacaraeg@gmail.com" aria-label="Email"
+                    class="hover:text-gray-800 transition-colors duration-200 text-xl"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-8 bg-white border-t border-gray-100">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-400">&copy; <span id="currentYear"></span> Jerdon Philip. All rights reserved.
+            </p>
+            <button id="scrollToTop"
+                class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors duration-200"
+                aria-label="Scroll to top">
+                Back to top <i class="fas fa-arrow-up text-xs"></i>
             </button>
         </div>
-    </div>
+    </footer>
 
-    <!-- Overlay for mobile menu -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Hidden regular sections for SEO and accessibility -->
-    <div class="sr-only" aria-hidden="true">
-        <h1>Jerdon Philip - Web Developer Portfolio</h1>
-        <p>Frontend Development, Backend Development, Database Systems, UI/UX Design</p>
-    </div>
-    <script>
-        // Suppress Tailwind CDN warning for portfolio site
-        console.warn = function () { };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script src="js/terminal.js"></script>
+    <!-- ========== SCRIPTS ========== -->
+    <script src="./js/minimal.js"></script>
 </body>
 
 </html>
